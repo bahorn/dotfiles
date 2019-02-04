@@ -1,0 +1,14 @@
+alias code="cd ~/Documents/Code/"
+alias rust=cargo
+alias search="grep -R . -e"
+alias kfile='grep "^./\(kern\|vm\|amd64\|fs\|netinet\|netinet6\|sys\|ufs\|\)/"'
+alias newff="~/Software/firefox/firefox --new-instance"
+alias weather="curl wttr.in/Coventry"
+alias httpserver="python -m SimpleHTTPServer 8000"
+alias clip="xsel --clipboard"
+alias vpn-up="sudo wg-quick up ~/Documents/VPN/MullvadWG/mullvad-no1.conf"
+alias vpn-down="sudo wg-quick down ~/Documents/VPN/MullvadWG/mullvad-no1.conf"
+alias dotenv="export \$(cat .env | xargs)"
+alias ipaddr="http -b https://wtfismyip.com/json"
+alias op="gio open"
+alias upgrade="sudo apt-get update; sudo apt-get upgrade"
