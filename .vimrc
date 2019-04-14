@@ -19,6 +19,7 @@ call vundle#begin()
     Plugin 'Shougo/neco-syntax'
     Plugin 'vim-syntastic/syntastic'
     Plugin 'calviken/vim-gdscript3'
+    Plugin 'vimwiki/vimwiki'
 call vundle#end()
 
 " general

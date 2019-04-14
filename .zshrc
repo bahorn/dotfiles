@@ -21,10 +21,18 @@ antigen theme evan
 # Tell Antigen that you're done.
 antigen apply
 
-. /home/a/torch/install/bin/torch-activate
-
 bindkey -v
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/a/.sdkman"
-[[ -s "/home/a/.sdkman/bin/sdkman-init.sh" ]] && source "/home/a/.sdkman/bin/sdkman-init.sh"
+export NVM_DIR="$HOME/.nvm"
+mkdir -p "$NVM_DIR"
+nvm() {
+    echo "Lazy loading nvm..."
+    # Remove nvm function
+    unfunction "$0"
+    # Load nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+    # Load bash_completion
+    [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+    # Call nvm
+    $0 "$@"
+}

@@ -44,3 +44,4 @@ export BROWSER=~/Software/firefox/firefox-bin
 export EDITOR=/usr/local/bin/vim
 export NNN_USE_EDITOR=1
 export PG_OF_PATH=/home/a/Desktop/of_v0.9.8_linux64_release
+. /home/a/anaconda3/etc/profile.d/conda.sh
