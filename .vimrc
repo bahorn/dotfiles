@@ -3,23 +3,31 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-    Plugin 'VundleVim/Vundle.vim'
-    Plugin 'itchyny/lightline.vim'
-    Plugin 'flazz/vim-colorschemes'
-    Plugin 'rykka/mathematic.vim'
-    Plugin 'hari-rangarajan/CCTree'
-    Plugin 'devjoe/vim-codequery'
-    Plugin 'Chiel92/vim-autoformat'
-    " Plugin 'fatih/vim-go'
-    Plugin 'sheerun/vim-polyglot'
-    Plugin 'fatih/vim-hclfmt'
-    Plugin 'Shougo/deoplete.nvim'
-    Plugin 'roxma/nvim-yarp'
-    Plugin 'roxma/vim-hug-neovim-rpc'
-    Plugin 'Shougo/neco-syntax'
-    Plugin 'vim-syntastic/syntastic'
-    Plugin 'calviken/vim-gdscript3'
-    Plugin 'vimwiki/vimwiki'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'rykka/mathematic.vim'
+Plugin 'hari-rangarajan/CCTree'
+Plugin 'devjoe/vim-codequery'
+Plugin 'Chiel92/vim-autoformat'
+" Plugin 'fatih/vim-go'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'fatih/vim-hclfmt'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
+Plugin 'Shougo/neco-syntax'
+Plugin 'neomake/neomake'
+" Plugin 'vim-syntastic/syntastic'
+Plugin 'calviken/vim-gdscript3'
+Plugin 'vimwiki/vimwiki'
+Plugin 'benjie/local-npm-bin.vim'
+Plugin 'junegunn/rainbow_parentheses.vim'
+" Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/Arduino-syntax-file'
+Plugin 'coddingtonbear/neomake-platformio'
 call vundle#end()
 
 " general
@@ -41,14 +49,13 @@ endif
 let g:python_host_prog  = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
 
-" UI
-set background=light
-
 " set theme based on time of day
 if strftime("%H") < 23 && strftime("%H") >= 5
     colorscheme scheakur
+    set background=light
 else
     colorscheme desertEx
+    set background=dark
 endif
 
 let g:lightline = {
@@ -68,7 +75,7 @@ set spell spelllang=en
 set encoding=utf-8
 set fileencoding=utf-8
 set t_Co=256
-set term=xterm-256color
+" set term=xterm-256color
 set termencoding=utf-8
 
 " manage tabs
@@ -146,6 +153,8 @@ let g:hcl_fmt_autosave = 0
 let g:tf_fmt_autosave = 0
 let g:nomad_fmt_autosave = 0
 
+call neomake#configure#automake('w')
+
 " Syntastic
 " set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -167,3 +176,57 @@ highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
+
+
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+
+augroup rainbow_lisp
+    autocmd!
+    autocmd FileType lisp,clojure,scheme,javascript,c,rust,python RainbowParentheses
+augroup END
+
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
+
+if &l:background == 'dark'
+  hi! RainbowLevel0 ctermfg=142 guifg=#b8bb26
+  hi! RainbowLevel1 ctermfg=108 guifg=#8ec07c
+  hi! RainbowLevel2 ctermfg=109 guifg=#83a598
+  hi! RainbowLevel3 ctermfg=175 guifg=#d3869b
+  hi! RainbowLevel4 ctermfg=167 guifg=#fb4934
+  hi! RainbowLevel5 ctermfg=208 guifg=#fe8019
+  hi! RainbowLevel6 ctermfg=214 guifg=#fabd2f
+  hi! RainbowLevel7 ctermfg=223 guifg=#ebdbb2
+  hi! RainbowLevel8 ctermfg=245 guifg=#928374
+else
+  hi! RainbowLevel0 ctermfg=100 guifg=#79740e
+  hi! RainbowLevel1 ctermfg=066 guifg=#427b58
+  hi! RainbowLevel2 ctermfg=024 guifg=#076678
+  hi! RainbowLevel3 ctermfg=096 guifg=#8f3f71
+  hi! RainbowLevel4 ctermfg=088 guifg=#9d0006
+  hi! RainbowLevel5 ctermfg=130 guifg=#af3a03
+  hi! RainbowLevel6 ctermfg=136 guifg=#b57614
+  hi! RainbowLevel7 ctermfg=244 guifg=#928374
+  hi! RainbowLevel8 ctermfg=237 guifg=#3c3836
+endif
+
+let g:indentLine_conceallevel = &conceallevel
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_concealcursor = 'inc'
+let g:indentLine_enabled = 1
+let g:indentLine_setColors = 1
+let g:indentLine_leadingSpaceChar = ' '
+let g:indentLine_leadingSpaceEnabled = 1
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+
+set foldmethod=indent
+
+augroup OpenAllFoldsOnFileOpen
+    autocmd!
+    autocmd BufRead * normal zR
+augroup END
+

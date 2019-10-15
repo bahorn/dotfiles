@@ -32,6 +32,10 @@ fi
 if [ -d "$HOME/.local/go/bin/" ]; then
     PATH="$HOME/.local/go/bin:$PATH"
 fi
+
+if [ -d "$HOME/.local/nvim/bin/" ]; then
+    PATH="$HOME/.local/nvim/bin:$PATH"
+fi
 export GOROOT="$HOME/.local/go/"
 export GOPATH="$HOME/go/"
 # set up z3
@@ -44,4 +48,3 @@ export BROWSER=~/Software/firefox/firefox-bin
 export EDITOR=/usr/local/bin/vim
 export NNN_USE_EDITOR=1
 export PG_OF_PATH=/home/a/Desktop/of_v0.9.8_linux64_release
-. /home/a/anaconda3/etc/profile.d/conda.sh
