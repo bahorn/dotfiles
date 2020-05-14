@@ -46,7 +46,7 @@ if has('mouse')
 endif
 
 
-let g:python_host_prog  = '/usr/bin/python'
+let g:python_host_prog  = '/usr/bin/python3'
 let g:python3_host_prog = '/usr/bin/python3'
 
 " set theme based on time of day
@@ -102,7 +102,7 @@ map Q gq
 inoremap <C-U> <C-G>u<C-U>
 
 
-cmap w!! w !sudo tee > /dev/null %
+cmap w!! w !SUDO_ASKPASS=/usr/bin/ssh-askpass sudo -i tee > /dev/null %
 
 " Mathematic
 
@@ -140,7 +140,7 @@ let g:autoformat_remove_trailing_spaces = 0
 " Deoplete
 
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
+"let g:deoplete#enable_smart_case = 1
 
 " Disable the candidates in Comment/String syntaxes.
 call deoplete#custom#source('_',
@@ -230,3 +230,4 @@ augroup OpenAllFoldsOnFileOpen
     autocmd BufRead * normal zR
 augroup END
 
+set guicursor=
