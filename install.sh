@@ -3,6 +3,8 @@
 cp ./zsh/aliases ~/.aliases
 cp ./zsh/profile ~/.profile
 cp ./zsh/zshrc ~/.zshrc
+mkdir -p ~/.misc/antigen
+curl -L https://git.io/antigen > ~/.misc/antigen/antigen.zsh 
 
 # vim
 mkdir -p ~/.config/nvim

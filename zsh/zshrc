@@ -1,7 +1,6 @@
 source ~/.misc/antigen/antigen.zsh
 source ~/.profile
 source ~/.aliases
-source ~/.misc/nnnquit.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
@@ -17,7 +16,7 @@ antigen bundle virtualenv
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 # Load the theme.
-antigen theme evan
+antigen theme fantasy
 # Tell Antigen that you're done.
 antigen apply
 
@@ -36,3 +35,4 @@ nvm() {
     # Call nvm
     $0 "$@"
 }
+
