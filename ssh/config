@@ -1,0 +1,4 @@
+# for logging into local vms. hostnames get reused.
+Host *-vm
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null

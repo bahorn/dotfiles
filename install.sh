@@ -16,3 +16,6 @@ cp ./tmux/tmux.conf ~/.tmux.conf
 
 # regolith
 cp -r ./regolith ~/.config/
+
+# ssh config
+cp ./ssh/config ~/.ssh/config
