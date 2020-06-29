@@ -16,7 +16,7 @@ antigen bundle virtualenv
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 # Load the theme.
-antigen theme fantasy
+antigen theme bahorn/dotfiles themes/fantasy
 # Tell Antigen that you're done.
 antigen apply
 
