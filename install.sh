@@ -8,6 +8,8 @@ curl -L https://git.io/antigen > ~/.misc/antigen/antigen.zsh
 
 # vim
 mkdir -p ~/.config/nvim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cp ./vim/vimrc ~/.vimrc
 cp ./vim/init.vim ~/.config/nvim/init.vim
 

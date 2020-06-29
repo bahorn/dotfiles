@@ -1,34 +1,31 @@
 " Vundle
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'itchyny/lightline.vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'rykka/mathematic.vim'
-Plugin 'hari-rangarajan/CCTree'
-Plugin 'devjoe/vim-codequery'
-Plugin 'Chiel92/vim-autoformat'
-" Plugin 'fatih/vim-go'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'fatih/vim-hclfmt'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'roxma/nvim-yarp'
-Plugin 'roxma/vim-hug-neovim-rpc'
-Plugin 'Shougo/neco-syntax'
-Plugin 'neomake/neomake'
-" Plugin 'vim-syntastic/syntastic'
-Plugin 'calviken/vim-gdscript3'
-Plugin 'vimwiki/vimwiki'
-Plugin 'benjie/local-npm-bin.vim'
-Plugin 'junegunn/rainbow_parentheses.vim'
-" Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'Yggdroot/indentLine'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-scripts/Arduino-syntax-file'
-Plugin 'coddingtonbear/neomake-platformio'
-call vundle#end()
+call plug#begin('~/.vim/plugged')
+
+Plug 'VundleVim/Vundle.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'rykka/mathematic.vim'
+Plug 'hari-rangarajan/CCTree'
+Plug 'devjoe/vim-codequery'
+Plug 'Chiel92/vim-autoformat'
+Plug 'sheerun/vim-polyglot'
+Plug 'fatih/vim-hclfmt'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'Shougo/neco-syntax'
+Plug 'neomake/neomake'
+Plug 'calviken/vim-gdscript3'
+Plug 'vimwiki/vimwiki'
+Plug 'benjie/local-npm-bin.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-scripts/Arduino-syntax-file'
+Plug 'coddingtonbear/neomake-platformio'
+call plug#end()
 
 " general
 set backup
