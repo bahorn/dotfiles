@@ -1,7 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'flazz/vim-colorschemes'
-Plug 'rykka/mathematic.vim'
 Plug 'hari-rangarajan/CCTree'
 Plug 'devjoe/vim-codequery'
 Plug 'Chiel92/vim-autoformat'
