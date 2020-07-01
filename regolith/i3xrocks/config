@@ -23,15 +23,15 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=/usr/share/i3xrocks/$BLOCK_NAME
-separator_block_width=40
+separator_block_width=20
 markup=pango
 color=xresource:i3xrocks.value.color
 label_color=xresource:i3xrocks.label.color
 full_text=〉
 separator=false
 
-[volume]
-interval=10
+[wifi]
+interval=360
 
 [net-traffic]
 interval=10
@@ -44,7 +44,12 @@ interval=10
 
 [temp]
 interval=10
-command=/home/a/.config/regolith/i3xrocks/temp
+
+[volume]
+interval=10
+
+[battery]
+interval=10
 
 [time2]
 interval=60

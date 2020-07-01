@@ -24,3 +24,6 @@ regolith:
 ssh:
 	cp ./ssh/config ~/.ssh/config
 	touch ~/.ssh/hosts
+
+
+all: ssh regolith tmux vim zsh
