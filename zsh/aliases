@@ -1,4 +1,4 @@
-alias code="cd ~/Documents/Code/"
+alias code="cd ~/Documents/code/"
 alias search="grep -R . -e"
 alias httpserver="python -m SimpleHTTPServer 8000"
 alias clip="xsel --clipboard"
