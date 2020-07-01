@@ -1,4 +1,4 @@
-source ~/.misc/antigen/antigen.zsh
+source ~/.config/zsh/antigen/antigen.zsh
 source ~/.profile
 source ~/.aliases
 # Load the oh-my-zsh's library.
