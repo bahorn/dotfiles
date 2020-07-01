@@ -1,31 +1,8 @@
 " Vundle
 set nocompatible
 filetype off
-call plug#begin('~/.vim/plugged')
 
-Plug 'VundleVim/Vundle.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'flazz/vim-colorschemes'
-Plug 'rykka/mathematic.vim'
-Plug 'hari-rangarajan/CCTree'
-Plug 'devjoe/vim-codequery'
-Plug 'Chiel92/vim-autoformat'
-Plug 'sheerun/vim-polyglot'
-Plug 'fatih/vim-hclfmt'
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'Shougo/neco-syntax'
-Plug 'neomake/neomake'
-Plug 'calviken/vim-gdscript3'
-Plug 'vimwiki/vimwiki'
-Plug 'benjie/local-npm-bin.vim'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'Yggdroot/indentLine'
-Plug 'scrooloose/nerdtree'
-Plug 'vim-scripts/Arduino-syntax-file'
-Plug 'coddingtonbear/neomake-platformio'
-call plug#end()
+source ~/.config/nvim/plugins.vim
 
 " general
 set backup
@@ -34,6 +11,25 @@ set ruler
 set showcmd
 set incsearch
 set number
+set guicursor=
+" manage tabs
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+" spelling
+set spell spelllang=en
+" terminal settings
+set encoding=utf-8
+set fileencoding=utf-8
+set t_Co=256
+" set term=xterm-256color
+set termencoding=utf-8
+
+
+
+let g:python_host_prog  = '/usr/bin/python3'
+let g:python3_host_prog = '/usr/bin/python3'
 
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
@@ -42,44 +38,10 @@ if has('mouse')
     set mouse=a
 endif
 
-
-let g:python_host_prog  = '/usr/bin/python3'
-let g:python3_host_prog = '/usr/bin/python3'
-
-" set theme based on time of day
-if strftime("%H") < 23 && strftime("%H") >= 5
-    colorscheme scheakur
-    set background=light
-else
-    colorscheme desertEx
-    set background=dark
-endif
-
-let g:lightline = {
-            \ 'colorscheme': 'seoul256',
-            \ }
-set laststatus=2
-
 if &t_Co > 2 || has("gui_running")
     syntax on
     set hlsearch
 endif
-
-" spelling
-set spell spelllang=en
-
-" terminal settings
-set encoding=utf-8
-set fileencoding=utf-8
-set t_Co=256
-" set term=xterm-256color
-set termencoding=utf-8
-
-" manage tabs
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
 
 " Highlight Long Lines
 set colorcolumn=80
@@ -97,9 +59,6 @@ map <C-a> :!make
 map <F7> mzgg=G`z
 map Q gq
 inoremap <C-U> <C-G>u<C-U>
-
-
-cmap w!! w !SUDO_ASKPASS=/usr/bin/ssh-askpass sudo -i tee > /dev/null %
 
 " Mathematic
 
@@ -123,7 +82,19 @@ if has("autocmd")
         autocmd FileType yaml,javascript,hcl setlocal softtabstop=2
 
     augroup END
-endif " has("autocmd")
+    
+    augroup rainbow_lisp
+        autocmd!
+        autocmd FileType lisp,clojure,scheme,javascript,c,rust,python RainbowParentheses
+    augroup END
+
+    augroup OpenAllFoldsOnFileOpen
+        autocmd!
+        autocmd BufRead * normal zR
+    augroup END
+
+    autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+endif
 
 if !exists(":DiffOrig")
     command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
@@ -137,76 +108,16 @@ let g:autoformat_remove_trailing_spaces = 0
 " Deoplete
 
 let g:deoplete#enable_at_startup = 1
-"let g:deoplete#enable_smart_case = 1
-
-" Disable the candidates in Comment/String syntaxes.
 call deoplete#custom#source('_',
             \ 'disabled_syntaxes', ['Comment', 'String'])
 
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-" HCL
-let g:hcl_fmt_autosave = 0
-let g:tf_fmt_autosave = 0
-let g:nomad_fmt_autosave = 0
-
 call neomake#configure#automake('w')
-
-" Syntastic
-" set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_javascript_checkers = ['eslint']
-
-let g:syntastic_error_symbol = 'x'
-let g:syntastic_style_error_symbol = '#'
-let g:syntastic_warning_symbol = '!'
-let g:syntastic_style_warning_symbol = '^'
-
-highlight link SyntasticErrorSign SignColumn
-highlight link SyntasticWarningSign SignColumn
-highlight link SyntasticStyleErrorSign SignColumn
-highlight link SyntasticStyleWarningSign SignColumn
-
 
 let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 
-augroup rainbow_lisp
-    autocmd!
-    autocmd FileType lisp,clojure,scheme,javascript,c,rust,python RainbowParentheses
-augroup END
-
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
-
-if &l:background == 'dark'
-  hi! RainbowLevel0 ctermfg=142 guifg=#b8bb26
-  hi! RainbowLevel1 ctermfg=108 guifg=#8ec07c
-  hi! RainbowLevel2 ctermfg=109 guifg=#83a598
-  hi! RainbowLevel3 ctermfg=175 guifg=#d3869b
-  hi! RainbowLevel4 ctermfg=167 guifg=#fb4934
-  hi! RainbowLevel5 ctermfg=208 guifg=#fe8019
-  hi! RainbowLevel6 ctermfg=214 guifg=#fabd2f
-  hi! RainbowLevel7 ctermfg=223 guifg=#ebdbb2
-  hi! RainbowLevel8 ctermfg=245 guifg=#928374
-else
-  hi! RainbowLevel0 ctermfg=100 guifg=#79740e
-  hi! RainbowLevel1 ctermfg=066 guifg=#427b58
-  hi! RainbowLevel2 ctermfg=024 guifg=#076678
-  hi! RainbowLevel3 ctermfg=096 guifg=#8f3f71
-  hi! RainbowLevel4 ctermfg=088 guifg=#9d0006
-  hi! RainbowLevel5 ctermfg=130 guifg=#af3a03
-  hi! RainbowLevel6 ctermfg=136 guifg=#b57614
-  hi! RainbowLevel7 ctermfg=244 guifg=#928374
-  hi! RainbowLevel8 ctermfg=237 guifg=#3c3836
-endif
 
 let g:indentLine_conceallevel = &conceallevel
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
@@ -222,9 +133,5 @@ map <C-n> :NERDTreeToggle<CR>
 
 set foldmethod=indent
 
-augroup OpenAllFoldsOnFileOpen
-    autocmd!
-    autocmd BufRead * normal zR
-augroup END
 
-set guicursor=
+source ~/.config/nvim/theme.vim
