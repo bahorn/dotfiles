@@ -1,0 +1,8 @@
+#!/bin/bash
+
+BLOB=`http -b https://wtfismyip.com/json`
+
+CC=`echo $BLOB | jq -r .YourFuckingCountryCode`
+TEXT=`echo $BLOB | 
+    jq -r '.YourFuckingIPAddress + " - " + .YourFuckingISP + " in " + .YourFuckingLocation'`
+echo \[$CC\] $TEXT

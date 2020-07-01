@@ -1,4 +1,4 @@
-.PHONY: zsh vim tmux regolith ssh
+.PHONY: zsh vim tmux regolith ssh scripts
 
 zsh:
 	cp ./zsh/aliases ~/.aliases
@@ -20,10 +20,12 @@ tmux:
 regolith:
 	cp -r ./regolith ~/.config/
 
-
 ssh:
 	cp ./ssh/config ~/.ssh/config
 	touch ~/.ssh/hosts
 
+scripts:
+	mkdir -p ~/bin
+	cp ./scripts/* ~/bin
 
-all: ssh regolith tmux vim zsh
+all: zsh vim tmux regolith ssh scripts
