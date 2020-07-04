@@ -1,0 +1,37 @@
+Include /etc/ssh/sshd_config.d/*.conf
+
+Port 22
+AddressFamily any
+ListenAddress 0.0.0.0
+ListenAddress ::
+
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+# Logging
+SyslogFacility AUTH
+LogLevel INFO
+
+LoginGraceTime 2m
+PermitRootLogin prohibit-password
+StrictModes yes
+MaxAuthTries 1
+MaxSessions 10
+
+PubkeyAuthentication yes
+
+AuthorizedPrincipalsFile none
+TrustedUserCAKeys /etc/ssh/ca.pub
+
+PasswordAuthentication no
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+
+UsePAM no
+
+X11Forwarding yes
+PrintMotd no
+
+AcceptEnv LANG LC_*
+
+# override default of no subsystems
+Subsystem	sftp	/usr/lib/openssh/sftp-server
