@@ -1,0 +1,8 @@
+[user]
+	signingkey = 2BC8C5886D8FC2799506CB340AE9D6B17DA57BCE
+	email = b@horn.uk
+	name = B Horn
+[commit]
+	gpgSign = true
+[github]
+	user = bahorn

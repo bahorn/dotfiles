@@ -1,4 +1,4 @@
-.PHONY: zsh vim tmux regolith ssh scripts
+.PHONY: zsh vim tmux regolith ssh scripts git
 
 zsh:
 	cp ./zsh/aliases ~/.aliases
@@ -27,5 +27,8 @@ ssh:
 scripts:
 	mkdir -p ~/bin
 	cp ./scripts/* ~/bin
+
+git:
+	cp ./git/gitconfig ~/.gitconfig
 
 all: zsh vim tmux regolith ssh scripts
