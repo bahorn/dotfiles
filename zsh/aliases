@@ -1,6 +1,6 @@
 alias code="cd ~/Documents/code/"
 alias search="grep -R . -e"
-alias httpserver="python -m SimpleHTTPServer 8000"
+alias httpserver="python3 -m http.server 8000"
 alias clip="xsel --clipboard"
 alias dotenv="export \$(cat .env | xargs)"
 alias op="gio open"

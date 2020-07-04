@@ -10,4 +10,4 @@ if [ -d "$HOME/.local/nvim/bin/" ]; then
     PATH="$HOME/.local/nvim/bin:$PATH"
 fi
 
-export EDITOR=/usr/local/bin/vim
+export EDITOR=`which vim`
