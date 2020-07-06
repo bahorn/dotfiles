@@ -5,7 +5,7 @@ zsh:
 	cp ./zsh/profile ~/.profile
 	cp ./zsh/zshrc ~/.zshrc
 	mkdir -p ~/.config/zsh/antigen
-	curl -L https://git.io/antigen > ~/.config/zsh/antigen/antigen.zsh
+	git clone git@github.com:zsh-users/antigen.git ~/.config/zsh/antigen | true
 
 vim:
 	mkdir -p ~/.config/nvim ~/.vim/
