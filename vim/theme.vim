@@ -8,8 +8,19 @@ else
 endif
 
 let g:lightline = {
-            \ 'colorscheme': 'seoul256',
-            \ }
+    \   'colorscheme': 'seoul256',
+    \   'active': {
+    \       'left': [
+    \           [ 'mode', 'paste' ],
+    \           [ 'readonly', 'filename', 'modified' ],
+    \           [ 'gitbranch' ]
+    \       ],
+    \   },
+    \   'component_function': {
+    \       'gitbranch': 'FugitiveHead'
+    \   },
+    \ }
+
 set laststatus=2
 
 
