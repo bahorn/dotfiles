@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+if git rev-parse --verify $1 ; then
+    git checkout $1
+else
+    echo "[!] Creating new branch"
+    git checkout -b $1
+fi
