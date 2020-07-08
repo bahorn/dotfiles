@@ -51,7 +51,7 @@ bindsym $mod+Return exec $terminal_path
 # start a web browser
 bindsym $mod+Shift+Return exec /usr/bin/sensible-browser
 
-bindsym $mod+m exec /usr/bin/nautilus
+bindsym $mod+m exec /usr/bin/nautilus -w
 
 # kill focused window
 bindsym $mod+Shift+q kill

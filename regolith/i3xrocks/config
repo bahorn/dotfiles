@@ -30,9 +30,6 @@ label_color=xresource:i3xrocks.label.color
 full_text=〉
 separator=false
 
-[wifi]
-interval=360
-
 [net-traffic]
 interval=10
 
@@ -44,6 +41,7 @@ interval=10
 
 [temp]
 interval=10
+command=/home/a/.config/regolith/i3xrocks/temp
 
 [volume]
 interval=10
