@@ -1,4 +1,4 @@
-.PHONY: zsh vim tmux regolith ssh scripts git gdb
+.PHONY: zsh vim tmux regolith ssh scripts git gdb pyenv
 
 zsh:
 	cp ./zsh/aliases ~/.aliases
@@ -38,4 +38,4 @@ gdb:
 pyenv:
 	 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
-all: zsh vim tmux regolith ssh scripts gdb
+all: zsh vim tmux regolith ssh scripts gdb pyenv
