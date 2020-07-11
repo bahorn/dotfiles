@@ -1,4 +1,4 @@
-.PHONY: zsh vim tmux regolith ssh scripts git
+.PHONY: zsh vim tmux regolith ssh scripts git gdb
 
 zsh:
 	cp ./zsh/aliases ~/.aliases
@@ -35,4 +35,7 @@ gdb:
 	wget -O ~/.gdbinit-gef.py -q https://github.com/hugsy/gef/raw/master/gef.py
 	echo source ~/.gdbinit-gef.py >> ~/.gdbinit
 
-all: zsh vim tmux regolith ssh scripts
+pyenv:
+	 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+all: zsh vim tmux regolith ssh scripts gdb
