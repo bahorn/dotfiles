@@ -40,5 +40,3 @@ augroup OpenAllFoldsOnFileOpen
     autocmd!
     autocmd BufRead * normal zR
 augroup END
-
-set foldmethod=indent

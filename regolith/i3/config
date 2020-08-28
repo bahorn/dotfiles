@@ -132,6 +132,10 @@ bindsym $mod+Ctrl+9 workspace $ws19
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
+
+# Move workspace to next screen
+bindsym $mod+Shift+m move workspace to output left
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
