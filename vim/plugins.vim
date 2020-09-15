@@ -18,4 +18,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/Arduino-syntax-file'
 Plug 'coddingtonbear/neomake-platformio'
 Plug 'tpope/vim-fugitive'
+Plug 'lervag/vimtex'
+Plug 'ujihisa/neco-look'
 call plug#end()

@@ -7,3 +7,4 @@ source ~/.config/nvim/theme.vim
 source ~/.config/nvim/keybinding.vim
 source ~/.config/nvim/ui.vim
 source ~/.config/nvim/lang.vim
+source ~/.config/nvim/latex.vim
