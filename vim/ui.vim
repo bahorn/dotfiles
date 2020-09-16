@@ -11,6 +11,8 @@ endif
 set colorcolumn=80
 hi clear SpellBad
 hi SpellBad cterm=underline
+" Auto limit line length
+set tw=80
 
 
 let g:rainbow#max_level = 16
