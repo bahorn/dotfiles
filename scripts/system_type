@@ -1,0 +1,9 @@
+#!/bin/bash
+# Quick script so we can determine which config to use.
+# Not that reliable, but it works well enough.
+
+if upower -e | grep -q BATT0; then
+    echo "laptop"
+else
+    echo "desktop"
+fi
