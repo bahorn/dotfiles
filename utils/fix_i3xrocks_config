@@ -1,0 +1,5 @@
+#!/bin/bash
+
+SYSTEM_TYPE=`./scripts/system_type`
+
+sed -i.bak "s/\# \$$SYSTEM_TYPE\$ //g" ~/.config/regolith/i3xrocks/config

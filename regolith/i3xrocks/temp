@@ -1,0 +1,10 @@
+#!/bin/sh
+LABEL_ICON=
+VALUE_FONT=${font:-$(xrescat i3xrocks.value.font "Source Code Pro Medium 13")}
+LABEL_COLOR=${label_color:-$(xrescat i3xrocks.label.color "#7B8394")}
+VALUE_COLOR=${color:-$(xrescat i3xrocks.value.color "#D8DEE9")}
+
+CPU=`sensors | grep Tdie | sed -e "s/Tdie\: *//g" | cut -f 1 -d " " | sed -e 's/+//g' -e 's/°C//g'`
+GPU=`nvidia-smi -q -d TEMPERATURE | grep "GPU Current Temp" | cut -d ":" -f 2 | sed -e 's/^[[:space:]]*//g' -e 's/ C//g'`
+
+echo "<span color=\"${LABEL_COLOR}\">$LABEL_ICON</span><span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\">CPU: $CPU℃ / GPU: $GPU℃ </span>"

@@ -20,6 +20,7 @@ tmux:
 
 regolith:
 	cp -r ./regolith ~/.config/
+	./utils/fix_i3xrocks_config
 
 ssh:
 	cp ./ssh/config ~/.ssh/config
