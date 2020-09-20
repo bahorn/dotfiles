@@ -20,5 +20,4 @@ ssh_hosts_config () {
 }
 
 echo "# Autogenerate from \`tailscale status\`"
-
 tailscale_hosts | ssh_hosts_config
