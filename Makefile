@@ -1,5 +1,7 @@
 .PHONY: zsh vim tmux regolith ssh scripts git gdb pyenv
 
+all: zsh vim tmux regolith ssh scripts gdb pyenv
+
 zsh:
 	cp ./zsh/aliases ~/.aliases
 	cp ./zsh/profile ~/.profile
@@ -14,6 +16,7 @@ vim:
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	cp ./vim/vimrc ~/.vimrc
 	cp ./vim/*.vim ~/.config/nvim/
+	vim +PlugInstall +PlugUpdate +qa
 
 tmux:
 	cp ./tmux/tmux.conf ~/.tmux.conf
@@ -39,6 +42,5 @@ gdb:
 	echo source ~/.gdbinit-gef.py >> ~/.gdbinit
 
 pyenv:
-	 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-
-all: zsh vim tmux regolith ssh scripts gdb pyenv
+	 @git clone https://github.com/pyenv/pyenv.git ~/.pyenv | true
+	 git -C ~/.pyenv pull
