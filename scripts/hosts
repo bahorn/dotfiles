@@ -1,0 +1,24 @@
+#!/bin/bash
+
+tailscale_hosts () {
+    tailscale status -json | jq ".Peer | [to_entries | .[].value |
+        {
+            hostname: .HostName,
+            publickey: .PublicKey,
+            address: .TailAddr
+        }
+    ]"
+}
+
+TEMPLATE='Host \(.hostname)
+    # pubkey: \(.publickey)
+    HostName \(.address)
+'
+
+ssh_hosts_config () {
+    jq -r ".[] | @text \"${TEMPLATE}\""
+}
+
+echo "# Autogenerate from \`tailscale status\`"
+
+tailscale_hosts | ssh_hosts_config
