@@ -20,4 +20,6 @@ Plug 'coddingtonbear/neomake-platformio'
 Plug 'tpope/vim-fugitive'
 Plug 'lervag/vimtex'
 Plug 'ujihisa/neco-look'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'monkoose/fzf-hoogle.vim'
 call plug#end()
