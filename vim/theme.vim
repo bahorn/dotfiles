@@ -7,6 +7,9 @@ else
     set background=dark
 endif
 
+colorscheme desertEx
+set background=dark
+
 let g:lightline = {
     \   'colorscheme': 'seoul256',
     \   'active': {

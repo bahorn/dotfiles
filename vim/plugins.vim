@@ -20,6 +20,7 @@ Plug 'coddingtonbear/neomake-platformio'
 Plug 'tpope/vim-fugitive'
 Plug 'lervag/vimtex'
 Plug 'ujihisa/neco-look'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'monkoose/fzf-hoogle.vim'
+Plug 'neovimhaskell/haskell-vim'
 call plug#end()

@@ -8,7 +8,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 " Highlight Long Lines
-set colorcolumn=80
+set colorcolumn=81
 hi clear SpellBad
 hi SpellBad cterm=underline
 " Auto limit line length
@@ -19,15 +19,15 @@ let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 augroup rainbow_lisp
     autocmd!
-    autocmd FileType lisp,clojure,scheme,javascript,c,rust,python RainbowParentheses
+    autocmd FileType haskell,lisp,clojure,scheme,javascript,c,rust,python RainbowParentheses
 augroup END
-
-
+            
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 
-let g:indentLine_conceallevel = &conceallevel
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_setConceal = 1
+let g:indentLine_conceallevel = 1
+let g:indentLine_char = '|'
 let g:indentLine_concealcursor = 'inc'
 let g:indentLine_enabled = 1
 let g:indentLine_setColors = 1

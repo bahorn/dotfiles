@@ -10,6 +10,7 @@ augroup vimrcEx
     autocmd FileType yaml,javascript,hcl setlocal tabstop=2
     autocmd FileType yaml,javascript,hcl setlocal shiftwidth=2
     autocmd FileType yaml,javascript,hcl setlocal softtabstop=2
+    autocmd FileType haskell setlocal formatprg=hindent
 augroup END
 
 
