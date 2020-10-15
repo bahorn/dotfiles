@@ -16,7 +16,8 @@ vim:
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	cp ./vim/vimrc ~/.vimrc
 	cp ./vim/*.vim ~/.config/nvim/
-	vim +PlugInstall +PlugUpdate +qa
+	cp ./vim/coc-settings.json ~/.config/nvim/
+	vim +PlugInstall +PlugUpdate +UpdateRemotePlugins +qa
 
 tmux:
 	cp ./tmux/tmux.conf ~/.tmux.conf

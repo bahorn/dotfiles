@@ -12,9 +12,3 @@ augroup vimrcEx
     autocmd FileType yaml,javascript,hcl setlocal softtabstop=2
     autocmd FileType haskell setlocal formatprg=hindent
 augroup END
-
-
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#source('_',
-            \ 'disabled_syntaxes', ['Comment', 'String'])
-
