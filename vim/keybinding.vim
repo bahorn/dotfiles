@@ -16,3 +16,5 @@ endif
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 call neomake#configure#automake('w')
+
+map m :CocAction<enter>
