@@ -4,5 +4,7 @@
 	name = B Horn
 [commit]
 	gpgSign = true
+[push]
+	gpgSign = if-asked
 [github]
 	user = bahorn
