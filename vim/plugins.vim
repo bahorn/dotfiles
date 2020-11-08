@@ -19,6 +19,7 @@ Plug 'vim-scripts/Arduino-syntax-file'
 Plug 'coddingtonbear/neomake-platformio'
 Plug 'tpope/vim-fugitive'
 Plug 'lervag/vimtex'
+Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 Plug 'ujihisa/neco-look'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'monkoose/fzf-hoogle.vim'
