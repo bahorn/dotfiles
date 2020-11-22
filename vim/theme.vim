@@ -7,7 +7,8 @@ else
     set background=dark
 endif
 
-colorscheme desertEx
+" colorscheme desertEx
+colorscheme iceberg
 set background=dark
 
 let g:lightline = {
