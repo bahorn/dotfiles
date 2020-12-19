@@ -11,5 +11,4 @@ if command -v flatpak ; then
     sudo flatpak update
     # Prune unused runtimes
     sudo flatpak uninstall --unused
-    sudo flatpak repair
 fi
