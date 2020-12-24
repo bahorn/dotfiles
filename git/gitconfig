@@ -3,7 +3,8 @@
 	email = b@horn.uk
 	name = B Horn
 [commit]
-	gpgSign = true
+    gpgSign = true
+    template = ~/.gitmessage
 [push]
 	gpgSign = if-asked
 [github]

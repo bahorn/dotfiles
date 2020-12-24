@@ -36,6 +36,7 @@ scripts:
 
 git:
 	cp ./git/gitconfig ~/.gitconfig
+	cp ./git/gitmessage ~/.gitmessage
 
 gdb:
 	wget -O ~/.gdbinit-gef.py -q https://github.com/hugsy/gef/raw/master/gef.py
