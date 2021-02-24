@@ -12,3 +12,6 @@ if command -v flatpak ; then
     # Prune unused runtimes
     sudo flatpak uninstall --unused
 fi
+if command -v docker ; then
+    docker images --format "{{.Repository}}:{{.Tag}}" | grep --invert-match '<none>' | xargs -L1 docker pull
+fi
