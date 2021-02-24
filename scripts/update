@@ -13,5 +13,7 @@ if command -v flatpak ; then
     sudo flatpak uninstall --unused
 fi
 if command -v docker ; then
-    docker images --format "{{.Repository}}:{{.Tag}}" | grep --invert-match '<none>' | xargs -L1 docker pull
+    sudo docker images --format "{{.Repository}}:{{.Tag}}" \
+        | grep --invert-match '<none>' \
+        | xargs -r -L1 docker pull
 fi
