@@ -1,16 +1,16 @@
 #!/bin/sh
 if command -v apt ; then
     sudo apt update
-    sudo apt upgrade
-    sudo apt autoremove
+    sudo apt -y upgrade
+    sudo apt -y autoremove
 fi 
 if command -v snap ; then
     sudo snap refresh
 fi
 if command -v flatpak ; then
-    sudo flatpak update
+    sudo flatpak update -y
     # Prune unused runtimes
-    sudo flatpak uninstall --unused
+    sudo flatpak uninstall -y --unused
 fi
 if command -v docker ; then
     sudo docker images --format "{{.Repository}}:{{.Tag}}" \
