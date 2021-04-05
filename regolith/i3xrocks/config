@@ -27,14 +27,14 @@ separator_block_width=20
 markup=pango
 color=xresource:i3xrocks.value.color
 label_color=xresource:i3xrocks.label.color
-full_text=〉
+#full_text= 
 separator=false
 
 # $laptop$ [wifi]
 # $laptop$ interval=360
 
-[net-traffic]
-interval=10
+#[net-traffic]
+#interval=10
 
 [cpu-usage]
 interval=10
@@ -46,8 +46,8 @@ interval=10
 interval=10
 # $desktop$ command=/home/a/.config/regolith/i3xrocks/temp
 
-[volume]
-interval=10
+#[volume]
+#interval=10
 
 [battery]
 interval=10
