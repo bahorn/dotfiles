@@ -7,7 +7,7 @@ zsh:
 	cp ./zsh/profile ~/.profile
 	cp ./zsh/zshrc ~/.zshrc
 	mkdir -p ~/.config/zsh/antigen
-	@git clone git@github.com:zsh-users/antigen.git ~/.config/zsh/antigen | true
+	@git clone https://github.com/zsh-users/antigen.git ~/.config/zsh/antigen | true
 	git -C ~/.config/zsh/antigen pull
 
 vim:
