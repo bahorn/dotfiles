@@ -2,6 +2,11 @@
 
 all: zsh vim tmux regolith ssh scripts gdb pyenv
 
+
+server: zsh vim tmux
+
+desktop: zsh vim tmux regolith ssh git gdb pyenv
+
 zsh:
 	cp ./zsh/aliases ~/.aliases
 	cp ./zsh/profile ~/.profile
