@@ -45,7 +45,7 @@ git:
 
 gdb:
 	wget -O ~/.gdbinit-gef.py -q https://github.com/hugsy/gef/raw/master/gef.py
-	echo source ~/.gdbinit-gef.py >> ~/.gdbinit
+	echo source ~/.gdbinit-gef.py > ~/.gdbinit
 
 pyenv:
 	 @git clone https://github.com/pyenv/pyenv.git ~/.pyenv | true
