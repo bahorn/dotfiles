@@ -4,8 +4,12 @@ all: zsh vim tmux regolith ssh scripts gdb pyenv
 
 
 server: zsh vim tmux
+vm: tools zsh vim tmux
+desktop: zsh vim tmux regolith ssh git gdb ddpyenv
 
-desktop: zsh vim tmux regolith ssh git gdb pyenv
+tools:
+	sudo apt install neovim tmux curl git python3-pip
+	sudo pip install pynvim
 
 zsh:
 	cp ./zsh/aliases ~/.aliases
@@ -16,6 +20,8 @@ zsh:
 	git -C ~/.config/zsh/antigen pull
 
 vim:
+	mkdir -p ~/bin
+	ln -s `which nvim` ~/bin
 	mkdir -p ~/.config/nvim ~/.vim/
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -24,6 +30,7 @@ vim:
 	vim +PlugInstall +PlugUpdate +UpdateRemotePlugins +qa
 
 tmux:
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	cp ./tmux/tmux.conf ~/.tmux.conf
 
 regolith:
