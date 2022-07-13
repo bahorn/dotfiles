@@ -5,7 +5,7 @@ tailscale_hosts () {
         {
             hostname: .HostName,
             publickey: .PublicKey,
-            address: .TailAddr
+            address: .TailscaleIPs[0]
         }
     ]"
 }

@@ -1,11 +1,11 @@
-.PHONY: zsh vim tmux regolith ssh scripts git gdb pyenv
+.PHONY: zsh vim tmux regolith ssh scripts git
 
-all: zsh vim tmux regolith ssh scripts gdb pyenv
+all: zsh vim tmux regolith ssh scripts
 
 
 server: zsh vim tmux
 vm: tools zsh vim tmux
-desktop: zsh vim tmux regolith ssh git gdb ddpyenv
+desktop: zsh vim tmux regolith ssh git
 
 tools:
 	sudo apt install neovim tmux curl git python3-pip
@@ -21,16 +21,14 @@ zsh:
 
 vim:
 	mkdir -p ~/bin
-	ln -s `which nvim` ~/bin
-	mkdir -p ~/.config/nvim ~/.vim/
+	@ln -s `which nvim` ~/bin | true
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	cp ./vim/vimrc ~/.vimrc
-	cp ./vim/*.vim ~/.config/nvim/
-	vim +PlugInstall +PlugUpdate +UpdateRemotePlugins +qa
+	make -C ./vim/ install
 
 tmux:
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	@git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm | true
+	git -C ~/.tmux/plugins/tpm pull
 	cp ./tmux/tmux.conf ~/.tmux.conf
 
 regolith:
@@ -49,11 +47,3 @@ scripts:
 git:
 	cp ./git/gitconfig ~/.gitconfig
 	cp ./git/gitmessage ~/.gitmessage
-
-gdb:
-	wget -O ~/.gdbinit-gef.py -q https://github.com/hugsy/gef/raw/master/gef.py
-	echo source ~/.gdbinit-gef.py > ~/.gdbinit
-
-pyenv:
-	 @git clone https://github.com/pyenv/pyenv.git ~/.pyenv | true
-	 git -C ~/.pyenv pull
