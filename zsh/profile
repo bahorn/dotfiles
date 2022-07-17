@@ -17,6 +17,7 @@ fi
 export EDITOR=`which vim`
 
 if [[ -n "$SSH_CONNECTION" ]]; then
+    export DBUS_SESSION_BUS_ADDRESS=/dev/null
     export GPG_TTY=$(tty)
     export PINENTRY_USER_DATA="USE_CURSES=1"
 fi
