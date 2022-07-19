@@ -1,0 +1,4 @@
+# Date Time
+[time2]
+interval=xresource:i3xrocks.time.interval 10
+command=/home/a/.config/regolith2/i3xrocks/time
