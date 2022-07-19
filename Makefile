@@ -8,7 +8,7 @@ vm: tools zsh vim tmux
 desktop: zsh vim tmux regolith ssh git
 
 tools:
-	sudo apt install neovim tmux curl git python3-pip
+	sudo apt install tmux curl git python3-pip
 	sudo pip install pynvim
 
 zsh:
