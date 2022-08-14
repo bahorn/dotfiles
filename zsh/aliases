@@ -5,6 +5,6 @@ alias clip="xsel --clipboard"
 alias dotenv="export \$(cat .env | xargs)"
 alias op="gio open"
 alias upgrade="sudo apt-get update; sudo apt-get upgrade"
-alias activate="source ./.venv/bin/activate"
+alias activate="source ./.venv/local/bin/activate"
 alias ports="sudo netstat -plnt"
 alias protontricks-flat='flatpak run --command=protontricks com.valvesoftware.Steam'
