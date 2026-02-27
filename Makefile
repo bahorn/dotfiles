@@ -49,6 +49,7 @@ git:
 
 fish:
 	mkdir -p ~/.config/fish/functions
+	cp fishsh/config.fish ~/.config/fish/config.fish
 	cp fishsh/functions/* ~/.config/fish/functions
 
 alacritty:
