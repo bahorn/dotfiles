@@ -1,0 +1,68 @@
+# Alacritty Configuration
+
+live_config_reload = true
+
+[shell]
+program = "/usr/bin/fish"
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding = { x = 0, y = 0 }
+dynamic_padding = true
+decorations = "Full"
+
+[scrolling]
+history = 10000
+
+[font]
+size = 9.0
+
+[font.normal]
+family = "JuliaMono"
+style = "Regular"
+
+[font.bold]
+family = "JuliaMono"
+style = "Bold"
+
+[font.italic]
+family = "JuliaMono"
+style = "Italic"
+
+# Wild Cherry color scheme (matching Gogh)
+
+[colors.primary]
+background = "#171421"
+foreground = "#D0CFCC"
+
+[colors.cursor]
+text = "#1F1726"
+cursor = "#DAFAFF"
+
+[colors.normal]
+black   = "#252525"
+red     = "#D94085"
+green   = "#2AB250"
+yellow  = "#FFD16F"
+blue    = "#883CDC"
+magenta = "#ECECEC"
+cyan    = "#C1B8B7"
+white   = "#FFF8DE"
+
+[colors.bright]
+black   = "#009CC9"
+red     = "#DA6BAC"
+green   = "#F4DCA5"
+yellow  = "#EAC066"
+blue    = "#308CBA"
+magenta = "#AE636B"
+cyan    = "#FF919D"
+white   = "#E4838D"
+
+[selection]
+save_to_clipboard = true
+
+[mouse]
+hide_when_typing = true

@@ -1,4 +1,4 @@
-.PHONY: zsh vim tmux regolith ssh scripts git
+.PHONY: zsh vim tmux regolith ssh scripts git alacritty
 
 all: zsh vim tmux regolith ssh scripts
 
@@ -50,3 +50,7 @@ git:
 fish:
 	mkdir -p ~/.config/fish/functions
 	cp fishsh/functions/* ~/.config/fish/functions
+
+alacritty:
+	mkdir -p ~/.config/alacritty/
+	cp alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
