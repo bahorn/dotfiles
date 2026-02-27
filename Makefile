@@ -32,7 +32,7 @@ tmux:
 	cp ./tmux/tmux.conf ~/.tmux.conf
 
 regolith:
-	cp -r ./regolith2 ~/.config/
+	cp -r ./regolith3 ~/.config/
 
 ssh:
 	cp ./ssh/config ~/.ssh/config

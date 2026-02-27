@@ -1,17 +1,16 @@
-i3-wm.gaps.inner.size: 0
-i3-wm.gaps.outer.size: 0
-i3-wm.window.border.size: 2
+wm.gaps.inner.size: 0
+wm.gaps.outer.size: 0
+wm.window.border.size: 2
 
-i3-wm.bar.font: "pango:Source Code Pro Medium 13, FontAwesome 13"
+wm.bar.mode: hide
+wm.bar.position: top
+wm.bar.trayoutput: primary
 
 i3xrocks.label.color: #f0f0f0
 i3xrocks.value.color: #d0d0d0
 
-i3-wm.bar.position: top
-i3-wm.bar.mode: hide
-i3-wm.bar.trayoutput: primary
 
-i3-wm.font: Ubuntu 11
+wm.font: Ubuntu 11
 gtk.font_name: Ubuntu 11
 gtk.theme_name: Ayu-Mirage-Dark
 
@@ -21,10 +20,13 @@ gnome.icon.theme: Faba
 gnome.terminal.font: JuliaMono 11
 gnome.terminal.update: false
 
+wm.bar.font: "pango:Source Code Pro Medium 13, FontAwesome 13"
+
 regolith.wallpaper.file: /home/a/Pictures/Edits/cluster/profile.jpg
 regolith.lockscreen.wallpaper.file: /home/a/Pictures/Edits/cluster/profile.jpg
 regolith.wallpaper.options: zoom
 regolith.lockscreen.wallpaper.options: zoom
-
-
+!regolith.look.path: /usr/share/regolith-look/ayu-mirage
 regolith.look.path: /usr/share/regolith-look/gruvbox
+
+Xcursor.size: 16
