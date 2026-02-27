@@ -46,3 +46,7 @@ scripts:
 git:
 	cp ./git/gitconfig ~/.gitconfig
 	cp ./git/gitmessage ~/.gitmessage
+
+fish:
+	mkdir -p ~/.config/fish/functions
+	cp fishsh/functions/* ~/.config/fish/functions
