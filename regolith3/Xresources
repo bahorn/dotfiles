@@ -6,13 +6,12 @@ wm.bar.mode: hide
 wm.bar.position: top
 wm.bar.trayoutput: primary
 
-i3xrocks.label.color: #f0f0f0
-i3xrocks.value.color: #d0d0d0
+i3xrocks.label.color: #101010
+i3xrocks.value.color: #202020
 
 
 wm.font: Ubuntu 11
 gtk.font_name: Ubuntu 11
-gtk.theme_name: Ayu-Mirage-Dark
 
 gtk.icon_theme_name: Faba
 gnome.icon.theme: Faba
